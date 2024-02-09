@@ -18,8 +18,6 @@ describe('throwError', () => {
     expect(t).toThrow(errorMessage);
   });
 
- 
-
   test('should throw error with default message if message is not provided', () => {
       const t = () => {
         throwError();

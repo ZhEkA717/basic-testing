@@ -53,7 +53,7 @@ describe('simpleCalculator tests', () => {
       b: 5,
       action: 'bla'
     })
-    expect(res).toEqual(null);
+    expect(res).toBeNull();
   });
 
   test('should return null for invalid arguments', () => {
@@ -62,6 +62,6 @@ describe('simpleCalculator tests', () => {
       b: 'bla',
       action: Action.Divide
     })
-    expect(res).toEqual(null);
+    expect(res).toBeNull();
   });
 });

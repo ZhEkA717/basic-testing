@@ -1,4 +1,3 @@
-// Uncomment the code below and write your tests
 import path from 'path';
 import { doStuffByInterval, doStuffByTimeout, readFileAsynchronously } from '.';
 import fs, { promises } from 'fs';

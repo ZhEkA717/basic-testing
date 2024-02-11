@@ -6,8 +6,8 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 0.1,
       b: 0.2,
-      action: Action.Add
-    })
+      action: Action.Add,
+    });
     expect(res).toBeCloseTo(0.3);
   });
 
@@ -15,8 +15,8 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 10,
       b: 5,
-      action: Action.Subtract
-    })
+      action: Action.Subtract,
+    });
     expect(res).toEqual(5);
   });
 
@@ -24,8 +24,8 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 0.1,
       b: 0.2,
-      action: Action.Multiply
-    })
+      action: Action.Multiply,
+    });
     expect(res).toBeCloseTo(0.02);
   });
 
@@ -33,8 +33,8 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 9,
       b: 5,
-      action: Action.Divide
-    })
+      action: Action.Divide,
+    });
     expect(res).toEqual(1.8);
   });
 
@@ -42,8 +42,8 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 9,
       b: 2,
-      action: Action.Exponentiate
-    })
+      action: Action.Exponentiate,
+    });
     expect(res).toEqual(81);
   });
 
@@ -51,8 +51,8 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: 9,
       b: 5,
-      action: 'bla'
-    })
+      action: 'bla',
+    });
     expect(res).toBeNull();
   });
 
@@ -60,8 +60,8 @@ describe('simpleCalculator tests', () => {
     const res = simpleCalculator({
       a: null,
       b: 'bla',
-      action: Action.Divide
-    })
+      action: Action.Divide,
+    });
     expect(res).toBeNull();
   });
 });

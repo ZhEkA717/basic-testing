@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { throttledGetDataFromApi } from './index';
 
-type TypeResponce = { id: number; name: string }[];
-
 describe('throttledGetDataFromApi', () => {
   beforeAll(() => {
     jest.useFakeTimers();
@@ -17,10 +15,7 @@ describe('throttledGetDataFromApi', () => {
   };
 
   const relativePath = 'api/users';
-  const responce: TypeResponce = [
-    { id: 1, name: 'user1' },
-    { id: 2, name: 'user2' },
-  ];
+  const data = 'response';
 
   test('should create instance with provided base url', async () => {
     const spyCreate = jest.spyOn(axios, 'create');
@@ -44,11 +39,9 @@ describe('throttledGetDataFromApi', () => {
   test('should return response data', async () => {
     jest
       .spyOn(axios.Axios.prototype, 'get')
-      .mockResolvedValueOnce({ data: responce });
-    const res: TypeResponce = await throttledGetDataFromApi(relativePath);
+      .mockResolvedValueOnce({ data });
+    const res = await throttledGetDataFromApi(relativePath);
     jest.runOnlyPendingTimers();
-    res.forEach((item, i) => {
-      expect(item.id).toBe(i + 1);
-    });
+    expect(res).toEqual(data);
   });
 });

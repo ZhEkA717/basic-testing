@@ -20,7 +20,10 @@ describe('partial mocking', () => {
     const log = jest.spyOn(console, 'log');
     mockOne();
     mockTwo();
-    mockThree();
+    mockThree();   
+    expect(mockOne).toHaveBeenCalled();
+    expect(mockTwo).toHaveBeenCalled();
+    expect(mockThree).toHaveBeenCalled();
     expect(log).not.toHaveBeenCalled();
   });
 
